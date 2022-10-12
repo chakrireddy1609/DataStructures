@@ -41,6 +41,27 @@ class LinkedList:
         new_node.next = prev_node.next
         prev_node.next = new_node
 
+    def delete_node(self,key):
+
+        cur_node = self.head
+
+        if cur_node and cur_node.data == key:
+            self.head = cur_node.next
+            cur_node = None
+            return
+
+        prev_node = None
+        while cur_node and cur_node.data != key:
+            prev_node = cur_node
+            cur_node = cur_node.next
+
+        if cur_node == None:
+            return
+
+        prev_node.next = cur_node.next
+        cur_node = None
+
+
 
 
 lllist = LinkedList()
@@ -49,5 +70,7 @@ lllist.append("B")
 lllist.prepend("10")
 lllist.insert_after_node(lllist.head.next,"Chakri")
 print(lllist.head.data)
+lllist.print()
+lllist.delete_node("10")
 lllist.print()
 
