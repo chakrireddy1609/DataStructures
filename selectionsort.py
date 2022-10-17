@@ -11,7 +11,7 @@ def selectionSort(list_a):
         if min_value != i:
             list_a[i],list_a[min_value] = list_a[min_value],list_a[i]
 
-
     return list_a
+
 
 print(selectionSort([4,2,1,2,99,10103,2,4]))
