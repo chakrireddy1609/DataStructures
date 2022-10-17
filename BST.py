@@ -10,7 +10,7 @@ class BST:
     def __init__(self):
         self.root = None
 
-    def add(self,current,value):
+    def add(self,current, value):
         if self.root is None:
             self.root = Node(value)
         else:
