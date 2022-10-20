@@ -1,7 +1,7 @@
 class Anagram:
     def anag(self,s,t):
         if len(s) != len(t):
-            print ("Not an anagram")
+            print("Not an anagram")
 
         else:
             sCount, tCount = {}, {}
