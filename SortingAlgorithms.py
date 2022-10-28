@@ -49,9 +49,34 @@ class Solution:
 
         return self.quickSort(items_lesser) + [pivot] + self.quickSort(items_greater)
 
+    def merge(self,left,right):
+        result = []
+        i,j = 0,0
+        while i < len(left) and j < len(right):
+            if left[i] < right[j]:
+                result.append(left[i])
+                i+=1
+            else:
+                result.append(right[j])
+                j+=1
+
+        result += left[i:]
+        result += right[j:]
+        return result
+
+    def mergeSort(self,list_a):
+        if len(list_a) <= 1:
+            return list_a
+        else:
+            mid = len(list_a)//2
+            left = self.mergeSort(list_a[:mid])
+            right = self.mergeSort(list_a[mid:])
+            return self.merge(left, right)
+
 
 s = Solution()
 print(s.bubbleSort([3,1,2,6,5,7]))
 print(s.selectionSort([3,1,2,6,5,7]))
 print(s.insertionSort([3,1,2,6,5,7]))
 print(s.quickSort([3,1,2,6,5,7]))
+print(s.mergeSort([3,1,2,6,5,7]))
