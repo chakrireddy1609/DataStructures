@@ -11,5 +11,6 @@ class Solution:
             mapts[c2] = c1
         return True
 
+
 s = Solution()
 print(s.isomorphic("egg","add"))
