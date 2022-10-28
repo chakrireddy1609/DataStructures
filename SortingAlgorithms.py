@@ -1,5 +1,6 @@
 class Solution:
 
+#BUBBLE SORT
     def bubbleSort(self, list_a):
         is_Sorted = False
 
@@ -11,6 +12,7 @@ class Solution:
                     list_a[i], list_a[i+1] = list_a[i+1], list_a[i]
         return list_a
 
+#Selection Sort
     def selectionSort(self, list_a):
         for i in range(len(list_a)-1):
             min_value = i
@@ -24,6 +26,7 @@ class Solution:
 
         return list_a
 
+#Insertion Sort
     def insertionSort(self, list_a):
 
         for i in range(1, len(list_a)):
@@ -33,6 +36,7 @@ class Solution:
                 i -= 1
         return list_a
 
+#Quick Sort
     def quickSort(self, list_a):
         if len(list_a) <= 1:
             return list_a
@@ -49,6 +53,7 @@ class Solution:
 
         return self.quickSort(items_lesser) + [pivot] + self.quickSort(items_greater)
 
+#Merge Sort
     def merge(self,left,right):
         result = []
         i,j = 0,0
