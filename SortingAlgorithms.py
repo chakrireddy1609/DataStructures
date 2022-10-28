@@ -8,7 +8,7 @@ class Solution:
             for i in range(len(list_a)-1):
                 if list_a[i] > list_a[i+1]:
                     is_Sorted = False
-                    list_a[i],list_a[i+1] = list_a[i+1],list_a[i]
+                    list_a[i], list_a[i+1] = list_a[i+1], list_a[i]
         return list_a
 
     def selectionSort(self, list_a):
@@ -20,16 +20,16 @@ class Solution:
                     min_value = j
 
             if min_value != i:
-                list_a[min_value],list_a[i] = list_a[i],list_a[min_value]
+                list_a[min_value], list_a[i] = list_a[i], list_a[min_value]
 
         return list_a
 
     def insertionSort(self, list_a):
 
-        for i in range(1,len(list_a)):
+        for i in range(1, len(list_a)):
 
             if list_a[i-1] > list_a[i] and i > 0:
-                list_a[i],list_a[i-1] = list_a[i-1],list_a[i]
+                list_a[i], list_a[i-1] = list_a[i-1], list_a[i]
                 i -= 1
         return list_a
 
