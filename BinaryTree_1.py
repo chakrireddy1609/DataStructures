@@ -1,3 +1,28 @@
+class Stack:
+    def __init__(self):
+        self.items = []
+
+    def enqueue(self,item):
+        self.items.append(item)
+
+    def dequeue(self):
+        if not self.is_empty:
+            return self.items.pop()
+
+    def is_empty(self):
+        return len(self.items) == 0
+
+    def __len__(self):
+        return self.size()
+
+    def size(self):
+        return len(self.items)
+
+    def peek(self):
+        if not self.is_empty():
+            return self.items[-1]
+
+
 class Queue:
     def __init__(self):
         self.items = []
@@ -72,6 +97,27 @@ class BinaryTree:
             if node.right:
                 queue.enqueue(node.right)
 
+        return traversal
+
+    def reverse_lvlordertraversal(self,start):
+        if start is None:
+            return
+        queue = Queue()
+        stack = Stack()
+        queue.enqueue(start)
+        traversal = ""
+        while len(queue) > 0:
+            node = queue.dequeue()
+            stack.enqueue(node)
+
+            if node.right:
+                queue.enqueue(node.right)
+            if node.left:
+                queue.enqueue(node.left)
+
+        while len(stack) > 0:
+            node = stack.dequeue()
+            traversal += str(node.value) + "-"
         return traversal
 
     def printTree(self,traversal_type):
