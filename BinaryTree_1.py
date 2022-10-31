@@ -6,7 +6,7 @@ class Stack:
         self.items.append(item)
 
     def dequeue(self):
-        if not self.is_empty:
+        if not self.is_empty():
             return self.items.pop()
 
     def is_empty(self):
@@ -31,7 +31,7 @@ class Queue:
         self.items.insert(0,item)
 
     def dequeue(self):
-        if not self.is_empty:
+        if not self.is_empty():
             return self.items.pop()
 
     def is_empty(self):
