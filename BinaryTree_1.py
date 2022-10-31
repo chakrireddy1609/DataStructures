@@ -129,6 +129,8 @@ class BinaryTree:
             return self.postOrder(tree.root, "")
         elif traversal_type == "lvlorder":
             return self.lvlOrderTraversal(tree.root)
+        elif traversal_type == "reverse_lvlordertraversal":
+            return self.reverse_lvlordertraversal(tree.root)
         else:
             return "Traversal Type is invalid"
 
@@ -138,6 +140,6 @@ tree.root.left = Node(2)
 tree.root.right = Node(3)
 tree.root.left.left = Node(4)
 tree.root.left.right = Node(5)
-print(tree.printTree("lvlorder"))
+print(tree.printTree("reverse_lvlordertraversal"))
 
 
