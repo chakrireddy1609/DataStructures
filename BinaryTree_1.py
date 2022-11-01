@@ -134,6 +134,29 @@ class BinaryTree:
         else:
             return "Traversal Type is invalid"
 
+    def size_iterative(self):
+        if self.root is None:
+            return 0
+
+        stack = Stack()
+        stack.enqueue(self.root)
+        size = 1
+        while stack:
+            node = stack.dequeue()
+            if node.left:
+                size += 1
+                stack.enqueue(node.left)
+            if node.right:
+                size += 1
+                stack.enqueue(node.right)
+        return size
+
+    def size_recursive(self,node):
+        if self.node is None:
+            return 0
+
+        return 1 + self.size_recursive(node.left) + self.size_recursive(node.right)
+
 
 tree = BinaryTree(1)
 tree.root.left = Node(2)
